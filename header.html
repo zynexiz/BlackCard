@@ -1,0 +1,80 @@
+<link href="{{ header.absoluteThemePath }}/style.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<div id="subject" dir="{{ header.subjectDir }}">{{ header.subject|safe }}</div>
+<div id="headerbox" dir="ltr">
+<table style="width:100%">
+	<div id="photo">
+		{% if header.photourl %}
+		<img src="{{ header.photourl }}" width="{{ header.photowidth }}" height="{{ header.photoheight }}" />
+		{% else %}
+		<img src="{{ header.absoluteThemePath }}/photo.png" width="{{ header.photowidth }}" height="{{ header.photoheight }}" />
+		{% endif %}
+	</div>
+	<div id="date">
+		<div class="headerleft">{{ header.datei18n }}</div>
+		<div class="headerrightdate" dir="{{ header.applicationDir }}">{{ header.date.short }}</div>
+	</div>
+	<div class="table">
+		<div class="row">
+			<div class="headerleft">{{ header.fromi18n }}</div>
+			<div class="headerright">
+				{{ header.from.fullAddress|safe }}
+
+				{% if header.resentfrom.isSet %}
+					{{ header.resentfromi18n }}: {{ header.resentfrom.fullAddress|safe }}
+				{% endif %}
+
+				{% if header.vcardname %}
+					<a href="{{ header.vcardname|safe }}">{{ header.vcardi18n }}</a>
+				{% endif %}
+
+				{% if header.organization %}
+					({{ header.organization|safe }})
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="headerleft">{{ header.toi18n }}</div>
+			<div class="headerright">{{ header.to.expandableTo|safe }}</div>
+		</div>
+
+		{% if header.cc.isSet %}
+		<div class="row">
+			<div class="headerleft">{{ header.cci18n }}</div>
+			<div class="headerright">{{ header.cc.expandableCc|safe }}</div>
+		</div>
+		{% endif %}
+
+		{% if header.bcc.isSet %}
+		<div class="row">
+			<div class="headerleft">{{ header.bcci18n }}</div>
+			<div class="headerright">{{ header.bcc.fullAddress }}</div>
+		</div>
+		{% endif %}
+
+		{% if header.Sender %}
+		<div class="row">
+			<div class="headerleft">Sender:</div>
+			<div class="headerright">{{ header.Sender|safe }}</div>
+		</div>
+		{% endif %}
+
+		{% if header.ListId %}
+		<div class="row">
+			<div class="headerleft">List-Id:</div>
+			<div class="headerright">{{ header.ListId }}</div>
+		</div>
+		{% endif %}
+
+		{% if header.spamHTML %}
+		<div class="row">
+			<div class="headerleft">{{ header.spamstatusi18n }}</div>
+			<div class="headerright">{{ header.spamHTML|safe }}</div>
+		</div>
+		{% endif %}
+	</div>
+	</table>
+<div id="attachmentInjectionPoint"></div>
+<div id="kmailContent"></div>

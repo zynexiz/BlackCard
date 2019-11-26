@@ -1,0 +1,83 @@
+html {
+	background-color: transparent !important;
+}
+
+body {
+	padding: 15px !important;
+	height: 100%;
+}
+
+div#headerbox {
+	margin-bottom: 1em;
+	background-color: white;
+	padding: 5px 20px 20px;
+	box-shadow: 1px 1px 6px -2px #000;
+	color: black !important;
+	border-radius:4px;
+	overflow: auto;
+	min-height: 300px;
+}
+
+div#subject {
+	font-size:150%;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-bottom: 8px;
+	min-height: 10px;
+}
+
+div#photo {
+	float: left;
+	margin: 5px;
+}
+
+div.table {
+	font-size: 70%;
+	display: table;
+	padding-top: 6px;
+	padding-right: 12px;
+}
+
+div.row {
+	display: table-row;
+}
+
+div.headerleft {
+	display: table-cell;
+	padding: 0.1em 1em;
+	color:#000;
+}
+
+div.headerright a {
+	display: table-cell;
+	padding: 0.1em;
+	font-weight: bold;
+}
+
+div.headerrightdate {
+	display: table-cell;
+	padding: 0.1em;
+	font-weight: bold;
+	color: #000 !important;
+}
+
+#kmailContent {
+	margin-top: 10px;
+	padding: 20px;
+	background-color: white;
+	border-top:1px solid #ddd;
+}
+.htmlWarn{
+	font-size:70%;
+	background-color:#fdd;
+	color:#000;
+	width:80%;
+	border:0px solid #f00;
+	margin:0px 0px ! important;
+}
+
+#date{
+	font-size: 70%;
+	float: right;
+	vertical-align: top;
+}
